@@ -1,32 +1,32 @@
-2020-06-09 18:41:25;INFO;Running test case CE01
-2020-06-09 18:41:28;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:29;DEBUG;test words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:29;DEBUG;PASS
-2020-06-09 18:41:29;INFO;Running test case CE02
-2020-06-09 18:41:31;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:33;DEBUG;test words are: {'123rf', 'but', 'keep', 'smiling', "it's", 'monday'}
-2020-06-09 18:41:33;DEBUG;PASS
-2020-06-09 18:41:33;INFO;Running test case CE03
-2020-06-09 18:41:35;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:36;DEBUG;test words are: {'but', 'keep', 'smiling', "it's", 'monday'}
-2020-06-09 18:41:36;DEBUG;PASS
-2020-06-09 18:41:36;INFO;Running test case CE04
-2020-06-09 18:41:38;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:39;DEBUG;test words are: set()
-2020-06-09 18:41:39;DEBUG;FAIL
-2020-06-09 18:41:39;INFO;Running test case L01
-2020-06-09 18:41:40;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:47;DEBUG;test words are: {'receive', 'is.', 'smile', 'creates', 'only', 'keep', 'special', 'brings', 'it.', 'sad,', 'goodwill', 'costs', 'of', 'about', 'and', 'troubled.', 'friendship.', 'nothing,', 'smiling', 'the', 'discouraged,', 'a', 'who', 'to', 'power', 'it', 'enrich', 'but', 'all', 'has', 'feeling', 'cheer', 'warmth', 'always', 'how', 'inspiration', 'think'}
-2020-06-09 18:41:47;DEBUG;FAIL
-2020-06-09 18:41:47;INFO;Running test case L02
-2020-06-09 18:41:48;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:49;DEBUG;test words are: set()
-2020-06-09 18:41:49;DEBUG;FAIL
-2020-06-09 18:41:49;INFO;Running test case R01
-2020-06-09 18:41:51;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:52;DEBUG;test words are: {"it's", 'keep', 'smiling', 'monday'}
-2020-06-09 18:41:52;DEBUG;FAIL
-2020-06-09 18:41:52;INFO;Running test case R02
-2020-06-09 18:41:55;DEBUG;control words are: {"it's", 'but', 'keep', 'monday'}
-2020-06-09 18:41:57;DEBUG;test words are: {'its', 'keep', 'you', 'fresh', 'through', "it's", 'monday', 'help', 'the', 'meds', 'use', 'a', 'budzgo', 'justgo', 'week.', 'it?', 'to', 'need', 'monday,', 'get', 'but', 'smiling.', 'budzgo.', 'start'}
-2020-06-09 18:41:57;DEBUG;PASS
+2020-06-09 19:26:27;INFO;Running test case CE01
+2020-06-09 19:26:30;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:31;DEBUG;test words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:31;DEBUG;PASS
+2020-06-09 19:26:31;INFO;Running test case CE02
+2020-06-09 19:26:33;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:36;DEBUG;test words are: {"it's", 'smiling', 'but', '123r', '123rf', 'keep', 'monday'}
+2020-06-09 19:26:36;DEBUG;PASS
+2020-06-09 19:26:36;INFO;Running test case CE03
+2020-06-09 19:26:38;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:39;DEBUG;test words are: {"it's", 'smiling', 'but', 'keep', 'monday'}
+2020-06-09 19:26:39;DEBUG;PASS
+2020-06-09 19:26:39;INFO;Running test case CE04
+2020-06-09 19:26:41;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:41;DEBUG;test words are: set()
+2020-06-09 19:26:41;DEBUG;FAIL
+2020-06-09 19:26:41;INFO;Running test case L01
+2020-06-09 19:26:43;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:49;DEBUG;test words are: {'how', 'creates', 'brings', 'the', 'all', 'smile', 'about', 'of', 'it.', 'has', 'receive', 'goodwill', 'but', 'think', 'is.', 'enrich', 'nothing,', 'who', 'a', 'costs', 'always', 'power', 'smiling', 'inspiration', 'cheer', 'warmth', 'keep', 'friendship.', 'sad,', 'troubled.', 'special', 'only', 'it', 'discouraged,', 'to', 'and', 'feeling'}
+2020-06-09 19:26:49;DEBUG;FAIL
+2020-06-09 19:26:49;INFO;Running test case L02
+2020-06-09 19:26:50;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:52;DEBUG;test words are: set()
+2020-06-09 19:26:52;DEBUG;FAIL
+2020-06-09 19:26:52;INFO;Running test case R01
+2020-06-09 19:26:54;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:26:56;DEBUG;test words are: {"it's", 'smiling', 'but', 'keep', 'monday'}
+2020-06-09 19:26:56;DEBUG;PASS
+2020-06-09 19:26:56;INFO;Running test case R02
+2020-06-09 19:26:58;DEBUG;control words are: {'but', "it's", 'keep', 'monday'}
+2020-06-09 19:27:01;DEBUG;test words are: {'need', 'the', "it's", 'it?', 'smiling.', 'through', 'monday,', 'fresh', 'start', 'justgo', 'but', 'a', 'monday', 'week.', 'budzgo.', 'help', 'findmyweed.', 'get', 'keep', 'meds', 'you', 'its', 'use', 'to', 'budzgo'}
+2020-06-09 19:27:01;DEBUG;PASS
