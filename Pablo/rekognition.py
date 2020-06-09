@@ -5,7 +5,10 @@ import typing
 import boto3
 
 logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler())
+formatter = logging.Formatter("%(asctime)s;%(levelname)s;%(message)s", "%Y-%m-%d %H:%M:%S")
+handler = logging.StreamHandler()
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
 
