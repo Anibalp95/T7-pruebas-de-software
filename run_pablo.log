@@ -1,0 +1,32 @@
+Running test case CE01
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'but', 'keep', "it's", 'monday'}
+PASS
+Running test case CE02
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'keep', 'smiling', '123rf', 'monday', "it's", 'but'}
+PASS
+Running test case CE03
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'keep', 'smiling', 'monday', "it's", 'but'}
+PASS
+Running test case CE04
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: set()
+FAIL
+Running test case L01
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'keep', 'is.', 'has', 'brings', 'a', 'the', 'enrich', 'special', 'receive', 'smiling', 'it', 'nothing,', 'who', 'always', 'to', 'cheer', 'smile', 'of', 'sad,', 'goodwill', 'inspiration', 'discouraged,', 'think', 'all', 'friendship.', 'and', 'creates', 'but', 'it.', 'power', 'how', 'costs', 'about', 'troubled.', 'only', 'warmth', 'feeling'}
+FAIL
+Running test case L02
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: set()
+FAIL
+Running test case R01
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'keep', "it's", 'monday', 'smiling'}
+FAIL
+Running test case R02
+control words are: {'but', 'keep', "it's", 'monday'}
+test words are: {'keep', 'its', 'it?', 'monday', 'a', 'need', 'the', 'fresh', 'meds', 'help', 'smiling.', 'to', 'budzgo', 'you', 'monday,', 'week.', 'start', 'justgo', 'but', 'budzgo.', 'get', 'through', 'use', "it's"}
+PASS

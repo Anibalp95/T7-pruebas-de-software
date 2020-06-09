@@ -21,7 +21,7 @@ def process(image_byes: bytes) -> typing.Mapping:
         return response['TextDetections']
 
 
-def clean_text(data: typing.Collection[typing.Mapping], confidence: float = 97) -> typing.Iterable[str]:
+def clean_text(data: typing.Collection[typing.Mapping], confidence: float) -> typing.Iterable[str]:
     for datum in data:
         if datum['Type'] != 'WORD' or datum['Confidence'] < confidence:
             continue
@@ -29,20 +29,17 @@ def clean_text(data: typing.Collection[typing.Mapping], confidence: float = 97) 
         yield detected_text.lower().strip()
 
 
-def detect_words(image_path: pathlib.Path) -> typing.Set[str]:
+def detect_words(image_path: pathlib.Path, confidence: float) -> typing.Set[str]:
     image_bytes = image_path.read_bytes()
     response = process(image_byes=image_bytes)
-    return set([x for x in clean_text(response)])
+    return set([x for x in clean_text(response, confidence)])
 
 
-def main():
-    control_image_path = pathlib.Path('control.png')
-    test_image_path = pathlib.Path('test.jpg')
-
-    control_words = detect_words(control_image_path)
+def main(control_image_path: pathlib.Path, test_image_path: pathlib.Path, confidence: float = 97):
+    control_words = detect_words(control_image_path, confidence=confidence)
     logger.debug(f'control words are: {control_words}')
 
-    test_words = detect_words(test_image_path)
+    test_words = detect_words(test_image_path, confidence=confidence)
     logger.debug(f'test words are: {test_words}')
 
     if control_words.issubset(test_words):
@@ -50,6 +47,3 @@ def main():
     else:
         logger.debug('FAIL')
 
-
-if __name__ == '__main__':
-    main()
