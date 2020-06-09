@@ -1,0 +1,24 @@
+2020-06-09 18:37:15.779132: running test CE01
+inputs: TestCases\CE01\control.jpg, TestCases\CE01\test.jpg
+Success
+2020-06-09 18:37:21.537545: running test CE02
+inputs: TestCases\CE02\control.jpg, TestCases\CE02\test.jpg
+Success
+2020-06-09 18:37:26.410644: running test CE03
+inputs: TestCases\CE03\control.jpg, TestCases\CE03\test.jpg
+Success
+2020-06-09 18:37:29.914472: running test CE04
+inputs: TestCases\CE04\control.jpg, TestCases\CE04\test.jpg
+Fail
+2020-06-09 18:37:41.679745: running test L01
+inputs: TestCases\L01\control.jpg, TestCases\L01\test.jpg
+Fail
+2020-06-09 18:37:45.855641: running test L02
+inputs: TestCases\L02\control.jpg, TestCases\L02\test.jpg
+Fail
+2020-06-09 18:37:51.091524: running test R01
+inputs: TestCases\R01\control.jpg, TestCases\R01\test.jpg
+Fail
+2020-06-09 18:37:59.170015: running test R02
+inputs: TestCases\R02\control.jpg, TestCases\R02\test.jpg
+Success

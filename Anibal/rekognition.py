@@ -3,16 +3,16 @@ import boto3
 from datetime import datetime
 
 class text_detector():
-    def __init__(self, control_photo, test_photo):
+    def __init__(self, local):
         self.client = boto3.client('rekognition')
         self.confidence = 97
-        self.control_photo = control_photo
-        self.test_photo = test_photo
-        self.log = "log.txt"
+        self.log = "log_anibal.log"
+        self.local = local
 
-    def write_log(self, line):
+    def write_log(self, test_id, line, p1, p2):
         with open(self.log, 'a') as file:
-            file.write("{}: {}, {}\n".format(datetime.now(),self.control_photo, self.test_photo))
+            file.write("{}: running test {}\n".format(datetime.now(),test_id))
+            file.write("inputs: {}, {}\n".format(p1,p2))
             file.write("{}\n".format(line))
 
     def normalize_text(self, detections):
@@ -27,57 +27,53 @@ class text_detector():
             text_list.append(lword)
         return text_list
 
-    def detect_text(self, bucket, photo):
+    def detect_text(self, test_id, bucket, photo):
         try:
-            response=self.client.detect_text(Image={'S3Object':{'Bucket':bucket,'Name':photo}})
+            if self.local:
+                photo_bytes = open(photo,'rb')
+                response = self.client.detect_text(Image={'Bytes':photo_bytes.read()})
+                photo_bytes.close()
+            else:
+                response=self.client.detect_text(Image={'S3Object':{'Bucket':bucket,'Name':photo}})
             textDetections=response['TextDetections']
             return textDetections
         except botocore.exceptions.ClientError as e:
-            print(e)
-            return 
-        #print ('Detected text\n----------')
-        #for text in textDetections:
-        #        print ('Detected text:' + text['DetectedText'])
-        #        print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
-        #        print ('Id: {}'.format(text['Id']))
-        #        if 'ParentId' in text:
-        #            print ('Parent Id: {}'.format(text['ParentId']))
-        #        print ('Type:' + text['Type'])
-        #        print()
+            self.write_log(test_id,"Exception:{}".format(e.response['Error']['Message']), photo, "")
+            return "ERROR"
         
     
-    def compare_text(self, control_text, test_text):
+    def compare_text(self, test_id, control_text, test_text, p1, p2):
         ctrl_text_copy = control_text
         for word in test_text:
             if word in ctrl_text_copy:
                 ctrl_text_copy.remove(word)
         if not ctrl_text_copy:
-            self.write_log("Success")
+            self.write_log(test_id,"Success", p1, p2)
             return True
-        self.write_log("Fail")
+        self.write_log(test_id,"Fail", p1, p2)
         return False
 
-def main():
-    bucket='pruebasdesoftware'
-    control_photo='monday.png'
-    test_photo='monday.png'
-    detector = text_detector(control_photo,test_photo)
-    control_detections = detector.detect_text(bucket, control_photo)
-    if not control_detections:
-        print("Hubo un error")
+def main(test_id, bucket, control_photo, test_photo, isLocal):
+    bucket=bucket
+    control_photo = control_photo
+    test_photo = test_photo
+    detector = text_detector(isLocal)
+    control_detections = detector.detect_text(test_id, bucket, control_photo)
+    if control_detections == "ERROR":
+        print("ERROR")
         return
-    test_detections = detector.detect_text(bucket, test_photo)
-    if not test_detections:
-        print("Hubo un error")
+    test_detections = detector.detect_text(test_id, bucket, test_photo)
+    if test_detections == "ERROR":
+        print("ERROR")
         return
     normalized_control_text = detector.normalize_text(control_detections)
     normalized_test_text = detector.normalize_text(test_detections)
     print(normalized_control_text)
     print(normalized_test_text)
-    if detector.compare_text(normalized_control_text, normalized_test_text):
+    if detector.compare_text(test_id,normalized_control_text, normalized_test_text,control_photo,test_photo):
         print("Exito")
     else:
         print("Fallo")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main('111', "pruebasdesoftware", "monday.png", "monday.png", True)
